@@ -1,0 +1,110 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_studentId",
+						"type": "uint256"
+					}
+				],
+				"name": "getTotalMarks",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_studentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_subjectId",
+						"type": "uint256"
+					}
+				],
+				"name": "setStudentMarks",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_studentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_subjectId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_marks",
+						"type": "uint256"
+					}
+				],
+				"name": "setStudentMarks",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"structMap.sol": "studentMarks"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"structMap.sol": {
+			"keccak256": "0x5c2fb7830773d43e4f86215f60a01e2cab3c84c2d9f9a4d234cb50f83e68f3f9",
+			"urls": [
+				"bzz-raw://cd9cee1e57c4ac8d0c714a1dfa5d0135f75d3e4f66717e990a89880c7db67808",
+				"dweb:/ipfs/QmPbPnEyXPwUJV1pxdcwQ991gZCaGDua8qMQs9z11PPuRd"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,40 @@
+pragma solidity ^0.5.0;
+
+contract studentMarks{
+
+    struct studentMarksStructure {
+        uint[] subjectList;
+        mapping (uint => uint) subjectMarks;
+
+    }
+
+    mapping (uint => studentMarksStructure) studentReport;
+
+    // function set student set marks
+        function setStudentMarks(uint _studentId, uint _subjectId, uint _marks) public{
+          studentReport[_studentId].subjectList.push(_subjectId);
+          studentReport[_studentId].subjectMarks[_subjectId] = _marks;
+        }
+
+
+    //function getstudent marks
+        function setStudentMarks(uint _studentId , uint _subjectId) public view returns(uint) {
+            return studentReport[_studentId].subjectMarks[_subjectId];
+
+        }
+      
+      function getTotalMarks(uint _studentId)public view returns(uint){
+          uint length = studentReport[_studentId].subjectList.length;
+          uint totalMarks = 0;
+      
+          for(uint i = 0 ; i < length ; i++ ){
+              totalMarks = studentReport[_studentId].subjectMarks[studentReport[_studentId].subjectList[i]] 
+              + totalMarks;
+          }
+
+          return totalMarks ;
+      }
+
+
+
+}

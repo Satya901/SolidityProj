@@ -1,0 +1,51 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "get_output",
+				"outputs": [
+					{
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ganache.sol": "shreyansh_05"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ganache.sol": {
+			"keccak256": "0xa4aae65eecb8924e574aee5a37ed0929473217eb42c296076d8f8cff7a9fb12d",
+			"urls": [
+				"bzzr://017a832e578e0b6a71f512ba3a1c0cba97bb6a9d055496722dc325e72f97600f"
+			]
+		}
+	},
+	"version": 1
+}

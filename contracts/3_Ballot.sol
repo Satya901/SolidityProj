@@ -3,8 +3,8 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 /** 
- * @title President Election
- * @dev Implements President voting process along with vote delegation
+ * @title Ballot
+ * @dev Implements voting process along with vote delegation
  */
 contract Ballot {
    
@@ -15,8 +15,7 @@ contract Ballot {
         uint vote;   // index of the voted proposal
     }
 
-    //struct Proposal {
-    struct Candidate {
+    struct Proposal {
         // If you can limit the length to a certain number of bytes, 
         // always use one of bytes1 to bytes32 because they are much cheaper
         bytes32 name;   // short name (up to 32 bytes)
@@ -27,26 +26,22 @@ contract Ballot {
 
     mapping(address => Voter) public voters;
 
-   // Proposal[] public proposals;
-    Candidate[] public candidates;
-    
-    bytes32[3]  candidateNames = [bytes32("Droupadi Murmu"), bytes32("Yashwant Sinha"), bytes32("Kapil Sibbal")];
+    Proposal[] public proposals;
 
-    //
-    // * @dev Create a new ballot to choose one of 'candidateNames'.
-    // * @param candidateNames names of candidate
-    // */
-    //constructor(bytes32[] memory candidateNames) {
-    constructor( ) {
+    /** 
+     * @dev Create a new ballot to choose one of 'proposalNames'.
+     * @param proposalNames names of proposals
+     */
+    constructor(bytes32[] memory proposalNames) {
         chairperson = msg.sender;
         voters[chairperson].weight = 1;
 
-        for (uint i = 0; i < candidateNames.length; i++) {
+        for (uint i = 0; i < proposalNames.length; i++) {
             // 'Proposal({...})' creates a temporary
             // Proposal object and 'proposals.push(...)'
             // appends it to the end of 'proposals'.
-            candidates.push(Candidate({
-                name: candidateNames[i],
+            proposals.push(Proposal({
+                name: proposalNames[i],
                 voteCount: 0
             }));
         }
@@ -78,9 +73,6 @@ contract Ballot {
         require(!sender.voted, "You already voted.");
         require(to != msg.sender, "Self-delegation is disallowed.");
 
-        // to check if "to address " which we are delegating our vote
-        // has already delegated his/her vote to next address
-        // if so we will directly delegate our vote to the final delegated address
         while (voters[to].delegate != address(0)) {
             to = voters[to].delegate;
 
@@ -93,7 +85,7 @@ contract Ballot {
         if (delegate_.voted) {
             // If the delegate already voted,
             // directly add to the number of votes
-            candidates[delegate_.vote].voteCount += sender.weight;
+            proposals[delegate_.vote].voteCount += sender.weight;
         } else {
             // If the delegate did not vote yet,
             // add to her weight.
@@ -103,46 +95,44 @@ contract Ballot {
 
     /**
      * @dev Give your vote (including votes delegated to you) to proposal 'proposals[proposal].name'.
-     * @param candidate index of candidate in the candidates array
+     * @param proposal index of proposal in the proposals array
      */
-    function vote(uint candidate) public {
+    function vote(uint proposal) public {
         Voter storage sender = voters[msg.sender];
         require(sender.weight != 0, "Has no right to vote");
         require(!sender.voted, "Already voted.");
         sender.voted = true;
-        sender.vote = candidate;
+        sender.vote = proposal;
 
-        // If 'candidate' is out of the range of the array,
+        // If 'proposal' is out of the range of the array,
         // this will throw automatically and revert all
         // changes.
-        candidates[candidate].voteCount += sender.weight;
+        proposals[proposal].voteCount += sender.weight;
     }
 
     /** 
-     * @dev Computes the winning candidate taking all previous votes into account.
-     * @return winningCandidate_ index of winning candidate in the candidates array
+     * @dev Computes the winning proposal taking all previous votes into account.
+     * @return winningProposal_ index of winning proposal in the proposals array
      */
-    function winningCandidate() public view
-            returns (uint winningCandidate_)
+    function winningProposal() public view
+            returns (uint winningProposal_)
     {
         uint winningVoteCount = 0;
-        for (uint p = 0; p < candidates.length; p++) {
-            if (candidates[p].voteCount > winningVoteCount) {
-                winningVoteCount = candidates[p].voteCount;
-                winningCandidate_ = p;
+        for (uint p = 0; p < proposals.length; p++) {
+            if (proposals[p].voteCount > winningVoteCount) {
+                winningVoteCount = proposals[p].voteCount;
+                winningProposal_ = p;
             }
         }
     }
 
     /** 
-     * @dev Calls winningCandidate() function to get the index of the winner contained in the candidates array and then
+     * @dev Calls winningProposal() function to get the index of the winner contained in the proposals array and then
      * @return winnerName_ the name of the winner
      */
     function winnerName() public view
-            returns (string  memory winnerName_)
-   //         returns (bytes32 winnerName_)
-    {   bytes32  temp = candidates[winningCandidate()].name;
-        winnerName_ =  string(abi.encodePacked(temp));
-
+            returns (bytes32 winnerName_)
+    {
+        winnerName_ = proposals[winningProposal()].name;
     }
 }

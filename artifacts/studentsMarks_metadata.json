@@ -1,0 +1,53 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "hw1",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"structMap.sol": "studentsMarks"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"structMap.sol": {
+			"keccak256": "0xbd2999d261ff7c778e6b4f714a85c42547c75575b62e4cf5eed9f04395d13d0d",
+			"urls": [
+				"bzz-raw://3789e4c3ea1bc47008e53e01605ab987d74d6cb29a9c6e0ec358432f0245a680",
+				"dweb:/ipfs/QmP1ct3z7RFHQgdv3mi6jvGJqkbWAxupbvR8127xcfdevN"
+			]
+		}
+	},
+	"version": 1
+}

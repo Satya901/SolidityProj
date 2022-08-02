@@ -1,0 +1,286 @@
+{
+	"id": "5551e6d196a2b4fdecba3179316624c0",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.5.17",
+	"solcLongVersion": "0.5.17+commit.d19bba13",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"collegeDepartmentRating.sol": {
+				"content": "pragma solidity ^0.5.0;\n\ncontract collegeRating{\n    \n\n}\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"collegeDepartmentRating.sol": {
+				"collegeRating": {
+					"abi": [],
+					"devdoc": {
+						"methods": {}
+					},
+					"evm": {
+						"assembly": "    /* \"collegeDepartmentRating.sol\":25:56  contract collegeRating{... */\n  mstore(0x40, 0x80)\n  callvalue\n    /* \"--CODEGEN--\":8:17   */\n  dup1\n    /* \"--CODEGEN--\":5:7   */\n  iszero\n  tag_1\n  jumpi\n    /* \"--CODEGEN--\":30:31   */\n  0x00\n    /* \"--CODEGEN--\":27:28   */\n  dup1\n    /* \"--CODEGEN--\":20:32   */\n  revert\n    /* \"--CODEGEN--\":5:7   */\ntag_1:\n    /* \"collegeDepartmentRating.sol\":25:56  contract collegeRating{... */\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"collegeDepartmentRating.sol\":25:56  contract collegeRating{... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa265627a7a72315820e824bd61ae4c9879beff4d1525dd58ea0d5aed35fe91be12da7ab870aad7037664736f6c63430005110032\n}\n",
+						"bytecode": {
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72315820e824bd61ae4c9879beff4d1525dd58ea0d5aed35fe91be12da7ab870aad7037664736f6c63430005110032",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3E DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH6 0x627A7A723158 KECCAK256 0xE8 0x24 0xBD PUSH2 0xAE4C SWAP9 PUSH26 0xBEFF4D1525DD58EA0D5AED35FE91BE12DA7AB870AAD703766473 PUSH16 0x6C634300051100320000000000000000 ",
+							"sourceMap": "25:31:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:31:0;;;;;;;"
+						},
+						"deployedBytecode": {
+							"linkReferences": {},
+							"object": "6080604052600080fdfea265627a7a72315820e824bd61ae4c9879beff4d1525dd58ea0d5aed35fe91be12da7ab870aad7037664736f6c63430005110032",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH6 0x627A7A723158 KECCAK256 0xE8 0x24 0xBD PUSH2 0xAE4C SWAP9 PUSH26 0xBEFF4D1525DD58EA0D5AED35FE91BE12DA7AB870AAD703766473 PUSH16 0x6C634300051100320000000000000000 ",
+							"sourceMap": "25:31:0:-;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "12400",
+								"executionCost": "66",
+								"totalCost": "12466"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 25,
+									"end": 56,
+									"name": "PUSH",
+									"value": "80"
+								},
+								{
+									"begin": 25,
+									"end": 56,
+									"name": "PUSH",
+									"value": "40"
+								},
+								{
+									"begin": 25,
+									"end": 56,
+									"name": "MSTORE"
+								},
+								{
+									"begin": 25,
+									"end": 56,
+									"name": "CALLVALUE"
+								},
+								{
+									"begin": 8,
+									"end": 17,
+									"name": "DUP1"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "ISZERO"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "PUSH [tag]",
+									"value": "1"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "JUMPI"
+								},
+								{
+									"begin": 30,
+									"end": 31,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 27,
+									"end": 28,
+									"name": "DUP1"
+								},
+								{
+									"begin": 20,
+									"end": 32,
+									"name": "REVERT"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "tag",
+									"value": "1"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "JUMPDEST"
+								},
+								{
+									"begin": 25,
+									"end": 56,
+									"name": "POP"
+								},
+								{
+									"begin": 25,
+									"end": 56,
+									"name": "PUSH #[$]",
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 25,
+									"end": 56,
+									"name": "DUP1"
+								},
+								{
+									"begin": 25,
+									"end": 56,
+									"name": "PUSH [$]",
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 25,
+									"end": 56,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 25,
+									"end": 56,
+									"name": "CODECOPY"
+								},
+								{
+									"begin": 25,
+									"end": 56,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 25,
+									"end": 56,
+									"name": "RETURN"
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a265627a7a72315820e824bd61ae4c9879beff4d1525dd58ea0d5aed35fe91be12da7ab870aad7037664736f6c63430005110032",
+									".code": [
+										{
+											"begin": 25,
+											"end": 56,
+											"name": "PUSH",
+											"value": "80"
+										},
+										{
+											"begin": 25,
+											"end": 56,
+											"name": "PUSH",
+											"value": "40"
+										},
+										{
+											"begin": 25,
+											"end": 56,
+											"name": "MSTORE"
+										},
+										{
+											"begin": 25,
+											"end": 56,
+											"name": "PUSH",
+											"value": "0"
+										},
+										{
+											"begin": 25,
+											"end": 56,
+											"name": "DUP1"
+										},
+										{
+											"begin": 25,
+											"end": 56,
+											"name": "REVERT"
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"collegeDepartmentRating.sol\":\"collegeRating\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"collegeDepartmentRating.sol\":{\"keccak256\":\"0x134e8be5b91987b3ddc381c591aaca68b9c4f0f37cbab574dd15b1384c7c20b2\",\"urls\":[\"bzz-raw://0b51b3b33dcc17cd794e17148ddd804fa992d3050c877649a5fa6db45371fdc4\",\"dweb:/ipfs/QmaHvSEbxStsxx23GNVKePpt3oQgJrR7Uh2Wh7eLy7947H\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"methods": {}
+					}
+				}
+			}
+		},
+		"sources": {
+			"collegeDepartmentRating.sol": {
+				"ast": {
+					"absolutePath": "collegeDepartmentRating.sol",
+					"exportedSymbols": {
+						"collegeRating": [
+							2
+						]
+					},
+					"id": 3,
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.5",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "0:23:0"
+						},
+						{
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"documentation": null,
+							"fullyImplemented": true,
+							"id": 2,
+							"linearizedBaseContracts": [
+								2
+							],
+							"name": "collegeRating",
+							"nodeType": "ContractDefinition",
+							"nodes": [],
+							"scope": 3,
+							"src": "25:31:0"
+						}
+					],
+					"src": "0:57:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}
