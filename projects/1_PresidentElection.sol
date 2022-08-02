@@ -103,7 +103,7 @@ contract Ballot {
 
     /**
      * @dev Give your vote (including votes delegated to you) to proposal 'proposals[proposal].name'.
-     * @param candidate index of candidate in the candidates arra
+     * @param candidate index of candidate in the candidates array
      */
     function vote(uint candidate) public {
         Voter storage sender = voters[msg.sender];
