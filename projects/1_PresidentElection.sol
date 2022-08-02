@@ -15,7 +15,7 @@ contract Ballot {
         uint vote;   // index of the voted proposal
     }
 
-    //struct Proposal {
+    //struct Candidate {
     struct Candidate {
         // If you can limit the length to a certain number of bytes, 
         // always use one of bytes1 to bytes32 because they are much cheaper
