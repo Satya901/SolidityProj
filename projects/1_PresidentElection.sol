@@ -27,7 +27,7 @@ contract Ballot {
 
     mapping(address => Voter) public voters;
 
-   // Proposal[] public proposals;
+  
     Candidate[] public candidates;
     
     bytes32[3]  candidateNames = [bytes32("Droupadi Murmu"), bytes32("Yashwant Sinha"), bytes32("Kapil Sibbal")];
